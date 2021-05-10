@@ -1,9 +1,17 @@
 import logging
+
 from LoginSession import Session
 
 import JsonFIle
+from datetime import datetime
 
 if __name__ == '__main__':
+
+    now = datetime.now()
+    dt_stamp = now.strftime("%d/%m/%Y %H:%M:%S")
+    log_filename = dt_stamp + ".log"
+    logging.basicConfig(filename='log_filename', encoding='utf-8', level=logging.DEBUG)
+
     json_filepath = 'C:\\Users\\jatin\\Desktop\\Development\\3par_cpg\\config.json'
 
     file1 = JsonFIle.JsonFile(json_filepath)
